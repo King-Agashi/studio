@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { BookOpen, Home, Search, ShoppingCart, User, Menu, Feather } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'; // Added SheetHeader, SheetTitle
 import { NavLink } from './NavLink';
 import { SearchBar } from '../shared/SearchBar';
 import { useCart } from '@/hooks/useCart';
@@ -68,7 +68,10 @@ export function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="left" className="w-[300px] sm:w-[400px] p-0">
+              <SheetHeader className="sr-only"> {/* Visually hide header if not needed but provide title */}
+                <SheetTitle>Navigation Menu</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col p-6 space-y-4">
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold font-lora text-foreground mb-4">
                  <Image src={logoUrl} alt="Bookstock Nook Logo" width={28} height={28} data-ai-hint="book logo" className="rounded-sm"/>

@@ -57,6 +57,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.shutterstock.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lifethisway.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

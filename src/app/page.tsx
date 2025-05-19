@@ -31,7 +31,7 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-r from-primary/30 via-background to-background py-16 md:py-24 rounded-lg overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           {/* Subtle background texture, e.g., vintage paper */}
-          <Image src="https://placehold.co/1200x400.png" alt="Vintage paper texture" layout="fill" objectFit="cover" data-ai-hint="vintage paper"/>
+          <Image src="https://lifethisway.com/wp-content/uploads/elementor/thumbs/do-people-still-read-books-qnfdog3o2ieuuqlkt2xzvw9op0pnfj643x6i5hc1oo.jpg" alt="People reading books background" layout="fill" objectFit="cover" data-ai-hint="reading books"/>
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold font-lora text-foreground mb-6">

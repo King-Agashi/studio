@@ -76,7 +76,7 @@ export function BookDetailsClient({ book }: BookDetailsClientProps) {
         </div>
 
         <div className="flex items-center justify-between">
-          <p className="text-3xl font-semibold text-primary">₹{book.price.toFixed(2)}</p>
+          <p className="text-3xl font-semibold text-foreground">₹{book.price.toFixed(2)}</p>
           <Badge variant={book.condition === 'new' ? 'default' : 'secondary'} className="text-sm px-3 py-1 capitalize">
             {book.condition}
           </Badge>
@@ -94,7 +94,7 @@ export function BookDetailsClient({ book }: BookDetailsClientProps) {
         <Separator />
 
         <div className="space-y-2 text-sm">
-          <p><strong className="font-medium text-foreground">Category:</strong> <Badge variant="outline">{book.category}</Badge></p>
+          <div className="flex items-center gap-1"><strong className="font-medium text-foreground">Category:</strong> <Badge variant="outline">{book.category}</Badge></div>
           {book.isbn && <p><strong className="font-medium text-foreground">ISBN:</strong> {book.isbn}</p>}
           {book.publisher && <p><strong className="font-medium text-foreground">Publisher:</strong> {book.publisher}</p>}
           {book.publishedDate && <p><strong className="font-medium text-foreground">Published:</strong> {new Date(book.publishedDate).toLocaleDateString()}</p>}

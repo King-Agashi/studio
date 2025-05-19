@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold font-lora text-primary" aria-label="Bookstock Nook Home">
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold font-lora text-foreground" aria-label="Bookstock Nook Home">
           <Image src={logoUrl} alt="Bookstock Nook Logo" width={32} height={32} data-ai-hint="book logo" className="rounded-sm" />
           Bookstock Nook
         </Link>
@@ -45,7 +45,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <SearchBar />
           <Link href="/cart" passHref legacyBehavior>
-            <Button variant="ghost" size="icon" aria-label={`Shopping cart with ${itemCount} items`}>
+            <Button variant="ghost" size="icon" aria-label={`Shopping cart with ${itemCount} items`} className="relative">
               <ShoppingCart className="h-5 w-5" />
               {itemCount > 0 && (
                 <Badge variant="destructive" className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs">
@@ -70,7 +70,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col p-6 space-y-4">
-                <Link href="/" className="flex items-center gap-2 text-lg font-bold font-lora text-primary mb-4">
+                <Link href="/" className="flex items-center gap-2 text-lg font-bold font-lora text-foreground mb-4">
                  <Image src={logoUrl} alt="Bookstock Nook Logo" width={28} height={28} data-ai-hint="book logo" className="rounded-sm"/>
                   Bookstock Nook
                 </Link>
@@ -90,10 +90,15 @@ export function Header() {
                    <div className="flex items-center justify-around mt-4">
                       <Link href="/cart" passHref legacyBehavior>
                         <Button variant="ghost" className="flex-1" aria-label={`Shopping cart with ${itemCount} items`}>
-                          <ShoppingCart className="h-5 w-5 mr-2" /> Cart
-                          {itemCount > 0 && (
-                            <Badge variant="destructive" className="ml-2">{itemCount}</Badge>
-                          )}
+                          <span className="relative mr-2">
+                            <ShoppingCart className="h-5 w-5" />
+                            {itemCount > 0 && (
+                              <Badge variant="destructive" className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs">
+                                {itemCount}
+                              </Badge>
+                            )}
+                          </span>
+                          Cart
                         </Button>
                       </Link>
                       <Link href="/auth" passHref legacyBehavior>

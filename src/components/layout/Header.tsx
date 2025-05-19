@@ -21,13 +21,13 @@ const navItems = [
 export function Header() {
   const { getItemCount } = useCart();
   const itemCount = getItemCount();
-  const logoUrl = "https://www.shutterstock.com/image-vector/outlined-logotype-letter-b-book-600nw-2118306167.jpg";
+  const logoUrl = "https://www.shutterstock.com/image-vector/blue-book-260nw-550079470.jpg";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold font-lora text-primary" aria-label="Bookstock Nook Home">
-          <Image src={logoUrl} alt="Bookstock Nook Logo" width={32} height={32} data-ai-hint="vintage book logo" className="rounded-sm" />
+          <Image src={logoUrl} alt="Bookstock Nook Logo" width={32} height={32} data-ai-hint="book logo" className="rounded-sm" />
           Bookstock Nook
         </Link>
 
@@ -71,7 +71,7 @@ export function Header() {
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col p-6 space-y-4">
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold font-lora text-primary mb-4">
-                 <Image src={logoUrl} alt="Bookstock Nook Logo" width={28} height={28} data-ai-hint="vintage book logo" className="rounded-sm"/>
+                 <Image src={logoUrl} alt="Bookstock Nook Logo" width={28} height={28} data-ai-hint="book logo" className="rounded-sm"/>
                   Bookstock Nook
                 </Link>
                 <nav className="flex flex-col space-y-2">

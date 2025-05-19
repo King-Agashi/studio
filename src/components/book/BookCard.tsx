@@ -1,3 +1,4 @@
+
 // src/components/book/BookCard.tsx
 "use client";
 
@@ -33,12 +34,12 @@ export function BookCard({ book }: BookCardProps) {
           </div>
         </CardHeader>
         <CardContent className="p-4 flex-grow">
-          <CardTitle className="text-lg font-lora leading-tight mb-1 group-hover:text-primary transition-colors">
+          <CardTitle className="text-lg font-lora leading-normal mb-1 group-hover:text-primary transition-colors line-clamp-2">
             {book.title}
           </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground mb-2">{book.author}</CardDescription>
+          <CardDescription className="text-sm text-muted-foreground mb-2 line-clamp-3">{book.author}</CardDescription>
           <div className="flex items-center justify-between mb-2">
-            <p className="text-lg font-semibold text-primary">${book.price.toFixed(2)}</p>
+            <p className="text-lg font-semibold text-primary">₹{book.price.toFixed(2)}</p>
             <Badge variant={book.condition === 'new' ? 'default' : 'secondary'} className="capitalize">
               {book.condition}
             </Badge>

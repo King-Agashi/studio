@@ -1,3 +1,4 @@
+
 // src/app/cart/page.tsx
 "use client";
 
@@ -6,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Trash2, ShoppingBag, Minus, Plus, ArrowLeft } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -30,7 +32,7 @@ export default function CartPage() {
     console.log('Proceeding to checkout with items:', cartItems);
     toast({
       title: 'Checkout Initiated (Dummy)',
-      description: `Thank you for your order of ${totalItems} item(s) totaling $${cartTotal.toFixed(2)}. This is a demo.`,
+      description: `Thank you for your order of ${totalItems} item(s) totaling ₹${cartTotal.toFixed(2)}. This is a demo.`,
     });
     clearCart(); // Optionally clear cart after dummy checkout
   };
@@ -72,7 +74,7 @@ export default function CartPage() {
                   <h2 className="text-xl font-semibold font-lora">{item.title}</h2>
                 </Link>
                 <p className="text-sm text-muted-foreground">by {item.author}</p>
-                <p className="text-lg font-medium text-primary">${item.price.toFixed(2)}</p>
+                <p className="text-lg font-medium text-primary">₹{item.price.toFixed(2)}</p>
                 <div className="flex items-center space-x-2 pt-2">
                   <Label htmlFor={`quantity-${item.id}`} className="sr-only">Quantity</Label>
                   <div className="flex items-center border rounded-md">
@@ -118,7 +120,7 @@ export default function CartPage() {
                 </div>
               </div>
               <div className="flex flex-col sm:items-end justify-between pt-2 sm:pt-0">
-                 <p className="text-lg font-semibold sm:text-right mb-2 sm:mb-0">Subtotal: ${(item.price * item.quantity).toFixed(2)}</p>
+                 <p className="text-lg font-semibold sm:text-right mb-2 sm:mb-0">Subtotal: ₹{(item.price * item.quantity).toFixed(2)}</p>
                 <Button
                   variant="ghost"
                   size="icon"
@@ -140,7 +142,7 @@ export default function CartPage() {
           <CardContent className="space-y-4">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Subtotal ({totalItems} items)</span>
-              <span>${cartTotal.toFixed(2)}</span>
+              <span>₹{cartTotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Shipping</span>
@@ -149,7 +151,7 @@ export default function CartPage() {
             <Separator />
             <div className="flex justify-between text-xl font-semibold">
               <span>Total</span>
-              <span>${cartTotal.toFixed(2)}</span>
+              <span>₹{cartTotal.toFixed(2)}</span>
             </div>
           </CardContent>
           <CardFooter className="flex flex-col gap-3">

@@ -1,3 +1,4 @@
+
 // src/app/browse/page.tsx
 "use client"
 
@@ -23,7 +24,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetFooter
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 
-const MAX_PRICE = Math.max(...mockBooks.map(b => b.price), 100); // Ensure max price is at least 100
+const MAX_PRICE = Math.max(...mockBooks.map(b => b.price), 5000); // Ensure max price is at least 5000 INR
 
 export default function BrowsePage() {
   const searchParams = useSearchParams();
@@ -116,14 +117,14 @@ export default function BrowsePage() {
             <Slider
                 min={0}
                 max={MAX_PRICE}
-                step={1}
+                step={10} // Adjusted step for INR
                 value={priceRange}
                 onValueChange={(value) => setPriceRange(value as [number, number])}
                 className="w-full"
             />
             <div className="flex justify-between text-sm text-muted-foreground">
-                <span>${priceRange[0]}</span>
-                <span>${priceRange[1]}</span>
+                <span>₹{priceRange[0]}</span>
+                <span>₹{priceRange[1]}</span>
             </div>
         </div>
       </div>

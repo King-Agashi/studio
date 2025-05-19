@@ -1,3 +1,4 @@
+
 import type { Book, BookCategory } from './types';
 
 export const mockBooks: Book[] = [
@@ -6,9 +7,9 @@ export const mockBooks: Book[] = [
     title: 'The Amazing Spider-Man #1',
     author: 'Stan Lee',
     category: 'Comic Books',
-    price: 49.99,
+    price: 3999, // Approx $49.99 -> INR
     condition: 'new',
-    description: 'The classic first issue of The Amazing Spider-Man. A must-have for collectors.',
+    description: 'The classic first issue of The Amazing Spider-Man. A must-have for collectors and fans of the web-slinger. Witness the origin of a legend.',
     imageUrl: 'https://placehold.co/300x450.png',
     featured: true,
     popular: true,
@@ -23,9 +24,9 @@ export const mockBooks: Book[] = [
     title: 'Harry Potter and the Sorcerer\'s Stone',
     author: 'J.K. Rowling',
     category: 'Harry Potter',
-    price: 25.00,
+    price: 1999, // Approx $25.00 -> INR
     condition: 'used',
-    description: 'The book that started it all. Join Harry as he discovers he is a wizard.',
+    description: 'The book that started it all. Join Harry as he discovers he is a wizard and embarks on an incredible journey at Hogwarts School of Witchcraft and Wizardry.',
     imageUrl: 'https://placehold.co/300x450.png',
     featured: true,
     popular: true,
@@ -40,9 +41,9 @@ export const mockBooks: Book[] = [
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
     category: 'Novels',
-    price: 15.99,
+    price: 1299, // Approx $15.99 -> INR
     condition: 'new',
-    description: 'A powerful story addressing serious issues of racial injustice and moral growth.',
+    description: 'A powerful story addressing serious issues of racial injustice and moral growth in the American South. A timeless classic that resonates with readers of all ages.',
     imageUrl: 'https://placehold.co/300x450.png',
     featured: true,
     popular: true,
@@ -55,9 +56,9 @@ export const mockBooks: Book[] = [
     title: 'Batman: The Killing Joke',
     author: 'Alan Moore',
     category: 'Comic Books',
-    price: 19.99,
+    price: 1599, // Approx $19.99 -> INR
     condition: 'used',
-    description: 'A dark and influential Batman story exploring the Joker\'s origin.',
+    description: 'A dark and influential Batman story exploring the Joker\'s origin and his twisted relationship with the Dark Knight. A seminal work in comic history.',
     imageUrl: 'https://placehold.co/300x450.png',
     popular: true,
     slug: 'batman-killing-joke',
@@ -69,9 +70,9 @@ export const mockBooks: Book[] = [
     title: 'Harry Potter and the Chamber of Secrets',
     author: 'J.K. Rowling',
     category: 'Harry Potter',
-    price: 22.50,
+    price: 1799, // Approx $22.50 -> INR
     condition: 'new',
-    description: 'Harry\'s second year at Hogwarts is filled with new challenges and dark secrets.',
+    description: 'Harry\'s second year at Hogwarts is filled with new challenges, dark secrets, and the mystery of the Chamber of Secrets. Adventure and magic continue.',
     imageUrl: 'https://placehold.co/300x450.png',
     slug: 'harry-potter-chamber-of-secrets',
     stock: 8,
@@ -81,9 +82,9 @@ export const mockBooks: Book[] = [
     title: '1984',
     author: 'George Orwell',
     category: 'Novels',
-    price: 12.00,
+    price: 999, // Approx $12.00 -> INR
     condition: 'used',
-    description: 'A dystopian novel set in a totalitarian society, exploring themes of surveillance and control.',
+    description: 'A dystopian novel set in a totalitarian society, exploring themes of surveillance, control, and individuality. A chilling vision of the future.',
     imageUrl: 'https://placehold.co/300x450.png',
     slug: '1984-george-orwell',
     stock: 20,
@@ -94,9 +95,9 @@ export const mockBooks: Book[] = [
     title: 'Saga, Vol. 1',
     author: 'Brian K. Vaughan',
     category: 'Comic Books',
-    price: 14.99,
+    price: 1199, // Approx $14.99 -> INR
     condition: 'new',
-    description: 'An epic space opera/fantasy comic book series about a husband and wife from long-warring extraterrestrial races.',
+    description: 'An epic space opera/fantasy comic book series about a husband and wife from long-warring extraterrestrial races, fighting for their newborn daughter.',
     imageUrl: 'https://placehold.co/300x450.png',
     featured: false,
     slug: 'saga-vol-1',
@@ -108,9 +109,9 @@ export const mockBooks: Book[] = [
     title: 'Harry Potter and the Prisoner of Azkaban',
     author: 'J.K. Rowling',
     category: 'Harry Potter',
-    price: 28.00,
+    price: 2200, // Approx $28.00 -> INR
     condition: 'new',
-    description: 'Harry\'s third year at Hogwarts introduces Sirius Black and dangerous Dementors.',
+    description: 'Harry\'s third year at Hogwarts introduces Sirius Black, an escaped prisoner from Azkaban, and dangerous Dementors. Secrets of the past unravel.',
     imageUrl: 'https://placehold.co/300x450.png',
     featured: true,
     slug: 'harry-potter-prisoner-of-azkaban',
@@ -121,9 +122,9 @@ export const mockBooks: Book[] = [
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     category: 'Novels',
-    price: 10.50,
+    price: 850, // Approx $10.50 -> INR
     condition: 'used',
-    description: 'A classic novel depicting the Roaring Twenties and the elusive American Dream.',
+    description: 'A classic novel depicting the Roaring Twenties, the elusive American Dream, and the tragic tale of Jay Gatsby. A masterpiece of American literature.',
     imageUrl: 'https://placehold.co/300x450.png',
     popular: true,
     slug: 'the-great-gatsby',
@@ -135,9 +136,9 @@ export const mockBooks: Book[] = [
     title: 'Watchmen',
     author: 'Alan Moore',
     category: 'Comic Books',
-    price: 24.99,
+    price: 1999, // Approx $24.99 -> INR
     condition: 'new',
-    description: 'A groundbreaking graphic novel that deconstructs superhero archetypes.',
+    description: 'A groundbreaking graphic novel that deconstructs superhero archetypes and explores complex moral and political themes in an alternate history.',
     imageUrl: 'https://placehold.co/300x450.png',
     slug: 'watchmen-alan-moore',
     stock: 9,

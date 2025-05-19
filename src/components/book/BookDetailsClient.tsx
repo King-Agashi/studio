@@ -1,3 +1,4 @@
+
 // src/components/book/BookDetailsClient.tsx
 "use client";
 
@@ -75,7 +76,7 @@ export function BookDetailsClient({ book }: BookDetailsClientProps) {
         </div>
 
         <div className="flex items-center justify-between">
-          <p className="text-3xl font-semibold text-primary">${book.price.toFixed(2)}</p>
+          <p className="text-3xl font-semibold text-primary">₹{book.price.toFixed(2)}</p>
           <Badge variant={book.condition === 'new' ? 'default' : 'secondary'} className="text-sm px-3 py-1 capitalize">
             {book.condition}
           </Badge>

@@ -1,3 +1,4 @@
+
 // src/components/book/BookForm.tsx
 "use client";
 
@@ -31,7 +32,7 @@ const bookFormSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters." }),
   author: z.string().min(2, { message: "Author name must be at least 2 characters." }),
   category: z.enum(bookCategories, { required_error: "Please select a category." }),
-  price: z.coerce.number().min(0.01, { message: "Price must be positive." }),
+  price: z.coerce.number().min(1, { message: "Price must be a positive value." }), // Adjusted for INR
   condition: z.enum(['new', 'used'] as [BookCondition, ...BookCondition[]], { required_error: "Please select the book's condition." }),
   description: z.string().min(10, { message: "Description must be at least 10 characters." }).max(1000, { message: "Description must be 1000 characters or less."}),
   imageUrl: z.string().url({ message: "Please enter a valid image URL." }).optional().or(z.literal('')),
@@ -162,11 +163,11 @@ export function BookForm() {
               {errors.category && <p className="text-sm text-destructive mt-1">{errors.category.message}</p>}
             </div>
             <div>
-              <Label htmlFor="price">Price ($)</Label>
+              <Label htmlFor="price">Price (₹)</Label>
               <Controller
                 name="price"
                 control={control}
-                render={({ field }) => <Input id="price" type="number" step="0.01" placeholder="e.g., 19.99" {...field} />}
+                render={({ field }) => <Input id="price" type="number" step="1" placeholder="e.g., 1499" {...field} />}
               />
               {errors.price && <p className="text-sm text-destructive mt-1">{errors.price.message}</p>}
             </div>

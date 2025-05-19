@@ -10,7 +10,7 @@ export const mockBooks: Book[] = [
     price: 3999, // Approx $49.99 -> INR
     condition: 'new',
     description: 'The classic first issue of The Amazing Spider-Man. A must-have for collectors and fans of the web-slinger. Witness the origin of a legend.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/en/5/54/AmazingSpider-Man1.jpg',
     featured: true,
     popular: true,
     slug: 'amazing-spiderman-1',
@@ -27,7 +27,7 @@ export const mockBooks: Book[] = [
     price: 1999, // Approx $25.00 -> INR
     condition: 'used',
     description: 'The book that started it all. Join Harry as he discovers he is a wizard and embarks on an incredible journey at Hogwarts School of Witchcraft and Wizardry.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://ew.com/thmb/UZPfjy7HfN9Q8leVZ78tojvdUes=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/harry-potter-and-the-sorcerers-stone_510x777-34f5766d25024802b00081f287f82173.jpg',
     featured: true,
     popular: true,
     slug: 'harry-potter-sorcerers-stone',
@@ -44,7 +44,7 @@ export const mockBooks: Book[] = [
     price: 1299, // Approx $15.99 -> INR
     condition: 'new',
     description: 'A powerful story addressing serious issues of racial injustice and moral growth in the American South. A timeless classic that resonates with readers of all ages.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://media.glamour.com/photos/56e1f3c462b398fa64cbd304/master/w_1600%2Cc_limit/entertainment-2016-02-18-main.jpg',
     featured: true,
     popular: true,
     slug: 'to-kill-a-mockingbird',
@@ -59,7 +59,7 @@ export const mockBooks: Book[] = [
     price: 1599, // Approx $19.99 -> INR
     condition: 'used',
     description: 'A dark and influential Batman story exploring the Joker\'s origin and his twisted relationship with the Dark Knight. A seminal work in comic history.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/M/MV5BMzJiZTJmNGItYTUwNy00ZWE2LWJlMTgtZjJkNzY1OTRiNTZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
     popular: true,
     slug: 'batman-killing-joke',
     stock: 7,
@@ -73,7 +73,7 @@ export const mockBooks: Book[] = [
     price: 1799, // Approx $22.50 -> INR
     condition: 'new',
     description: 'Harry\'s second year at Hogwarts is filled with new challenges, dark secrets, and the mystery of the Chamber of Secrets. Adventure and magic continue.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/I/818umIdoruL.jpg',
     slug: 'harry-potter-chamber-of-secrets',
     stock: 8,
   },
@@ -85,7 +85,7 @@ export const mockBooks: Book[] = [
     price: 999, // Approx $12.00 -> INR
     condition: 'used',
     description: 'A dystopian novel set in a totalitarian society, exploring themes of surveillance, control, and individuality. A chilling vision of the future.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/I/810+cvDyS+L.jpg',
     slug: '1984-george-orwell',
     stock: 20,
     tags: ['dystopian', 'classic', 'political fiction'],
@@ -98,7 +98,7 @@ export const mockBooks: Book[] = [
     price: 1199, // Approx $14.99 -> INR
     condition: 'new',
     description: 'An epic space opera/fantasy comic book series about a husband and wife from long-warring extraterrestrial races, fighting for their newborn daughter.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/I/71cVDK9BRaL.jpg',
     featured: false,
     slug: 'saga-vol-1',
     stock: 12,
@@ -112,7 +112,7 @@ export const mockBooks: Book[] = [
     price: 2200, // Approx $28.00 -> INR
     condition: 'new',
     description: 'Harry\'s third year at Hogwarts introduces Sirius Black, an escaped prisoner from Azkaban, and dangerous Dementors. Secrets of the past unravel.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/I/81NQA1BDlnL._AC_UF1000,1000_QL80_.jpg',
     featured: true,
     slug: 'harry-potter-prisoner-of-azkaban',
     stock: 3,
@@ -125,7 +125,7 @@ export const mockBooks: Book[] = [
     price: 850, // Approx $10.50 -> INR
     condition: 'used',
     description: 'A classic novel depicting the Roaring Twenties, the elusive American Dream, and the tragic tale of Jay Gatsby. A masterpiece of American literature.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/I/71YF1hHLw7L.jpg',
     popular: true,
     slug: 'the-great-gatsby',
     stock: 18,
@@ -139,7 +139,7 @@ export const mockBooks: Book[] = [
     price: 1999, // Approx $24.99 -> INR
     condition: 'new',
     description: 'A groundbreaking graphic novel that deconstructs superhero archetypes and explores complex moral and political themes in an alternate history.',
-    imageUrl: 'https://placehold.co/300x450.png',
+    imageUrl: 'https://m.media-amazon.com/images/I/81Hf9W0uoxL.jpg',
     slug: 'watchmen-alan-moore',
     stock: 9,
     tags: ['dc comics', 'graphic novel', 'deconstruction'],

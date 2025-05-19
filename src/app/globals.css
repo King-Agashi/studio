@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     --card-foreground: 45 20% 15%; /* Dark, warm brown/grey for text on cards */
     --popover: 0 0% 100%; /* White for popovers */
     --popover-foreground: 45 20% 15%; /* Dark text for popovers */
-    --primary: 40 60% 85%; /* Softer beige for primary elements */
+    --primary: 40 60% 60%; /* Softer beige for primary elements */
     --primary-foreground: 40 30% 20%; /* Darker, warm brown for text on primary */
     --secondary: 45 40% 92%; /* Lighter beige for secondary elements */
     --secondary-foreground: 45 25% 25%; /* Darker text for secondary */

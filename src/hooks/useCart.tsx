@@ -1,3 +1,4 @@
+
 // src/hooks/useCart.tsx
 "use client";
 
@@ -43,45 +44,45 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const existingItem = prevItems.find((item) => item.id === book.id);
       if (existingItem) {
         if (existingItem.quantity + quantity > book.stock) {
-          toast({
+          setTimeout(() => toast({
             title: "Stock limit reached",
             description: `Cannot add more than ${book.stock} items for ${book.title}.`,
             variant: "destructive",
-          });
+          }), 0);
           return prevItems.map((item) =>
             item.id === book.id ? { ...item, quantity: book.stock } : item
           );
         }
-        toast({
+        setTimeout(() => toast({
           title: "Item updated in cart",
           description: `${book.title} quantity increased.`,
-        });
+        }), 0);
         return prevItems.map((item) =>
           item.id === book.id ? { ...item, quantity: item.quantity + quantity } : item
         );
       }
       if (quantity > book.stock) {
-        toast({
+        setTimeout(() => toast({
             title: "Stock limit reached",
             description: `Cannot add more than ${book.stock} items for ${book.title}.`,
             variant: "destructive",
-          });
+          }), 0);
         return [...prevItems, { ...book, quantity: book.stock }];
       }
-      toast({
+      setTimeout(() => toast({
         title: "Item added to cart",
         description: `${book.title} has been added to your cart.`,
-      });
+      }), 0);
       return [...prevItems, { ...book, quantity }];
     });
   }, [toast]);
 
   const removeFromCart = useCallback((bookId: string) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== bookId));
-    toast({
+    setTimeout(() => toast({
       title: "Item removed",
       description: "The item has been removed from your cart.",
-    });
+    }), 0);
   }, [toast]);
 
   const updateQuantity = useCallback((bookId: string, quantity: number) => {
@@ -89,25 +90,24 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       prevItems.map((item) => {
         if (item.id === bookId) {
           if (quantity <= 0) {
-            // This case should ideally be handled by removeFromCart, but as a safeguard:
-            toast({
+            setTimeout(() => toast({
               title: "Item removed",
               description: "Quantity set to 0, item removed.",
-            });
+            }), 0);
             return null; // Mark for removal
           }
           if (quantity > item.stock) {
-            toast({
+            setTimeout(() => toast({
               title: "Stock limit reached",
               description: `Cannot set quantity more than ${item.stock} for ${item.title}.`,
               variant: "destructive",
-            });
+            }), 0);
             return { ...item, quantity: item.stock };
           }
-          toast({
+          setTimeout(() => toast({
             title: "Quantity updated",
             description: `Quantity for ${item.title} updated.`,
-          });
+          }), 0);
           return { ...item, quantity };
         }
         return item;
@@ -117,10 +117,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const clearCart = useCallback(() => {
     setCartItems([]);
-    toast({
+    setTimeout(() => toast({
       title: "Cart cleared",
       description: "All items have been removed from your cart.",
-    });
+    }), 0);
   }, [toast]);
 
   const getCartTotal = useCallback(() => {

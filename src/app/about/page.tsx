@@ -16,12 +16,12 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="relative aspect-square max-w-md mx-auto w-full">
           <Image
-            src="https://placehold.co/600x600.png"
+            src="/image_1722417340312.png" // Updated image source
             alt="Dev Singh Parihar - Founder of Bookstock Nook"
             layout="fill"
             objectFit="cover"
             className="rounded-xl shadow-2xl"
-            data-ai-hint="founder portrait books"
+            data-ai-hint="founder portrait" // Updated AI hint
           />
         </div>
         

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   output: 'export', // Add this line for static exports
   // If deploying to a subdirectory on GitHub Pages (e.g., https://<username>.github.io/<repository-name>/),
   // you'll need to set the basePath:
-  // basePath: '/<repository-name>',
+  basePath: '/studio', // Set for the 'studio' repository
   typescript: {
     ignoreBuildErrors: true,
   },

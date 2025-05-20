@@ -28,18 +28,33 @@ const MAX_PRICE = Math.max(...mockBooks.map(b => b.price), 5000); // Ensure max 
 
 export default function BrowsePage() {
   const searchParams = useSearchParams();
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
-  const [selectedCategory, setSelectedCategory] = useState<BookCategory | 'all'>(
-    (searchParams.get('category') as BookCategory) || 'all'
-  );
+  
+  // Initialize state with static default values for static export compatibility
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<BookCategory | 'all'>('all');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, MAX_PRICE]);
   const [authorSearch, setAuthorSearch] = useState('');
   const [selectedCondition, setSelectedCondition] = useState<BookCondition | 'all'>('all');
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
+  // useEffect to update state from searchParams after client-side hydration
   useEffect(() => {
-    setSearchTerm(searchParams.get('search') || '');
-    setSelectedCategory((searchParams.get('category') as BookCategory) || 'all');
+    const querySearchTerm = searchParams.get('search');
+    const queryCategory = searchParams.get('category') as BookCategory;
+
+    if (querySearchTerm) {
+      setSearchTerm(querySearchTerm);
+    } else {
+      // Optionally, reset if param is removed. For now, let's keep existing if param is absent.
+      // setSearchTerm(''); 
+    }
+
+    if (queryCategory && bookCategories.includes(queryCategory)) {
+      setSelectedCategory(queryCategory);
+    } else {
+      // Optionally, reset if param is removed or invalid.
+      // setSelectedCategory('all');
+    }
   }, [searchParams]);
 
 

@@ -22,7 +22,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { bookCategories } from '@/lib/mockData';
 import type { BookCategory, BookCondition } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
-import { generateBookDescriptionHints, type GenerateBookDescriptionHintsInput } from '@/ai/flows/generate-book-description-hints';
+// import { generateBookDescriptionHints, type GenerateBookDescriptionHintsInput } from '@/ai/flows/generate-book-description-hints'; // Commented out for static export
 import { Wand2, Loader2, Info } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -44,8 +44,8 @@ type BookFormValues = z.infer<typeof bookFormSchema>;
 
 export function BookForm() {
   const { toast } = useToast();
-  const [isLoadingHints, setIsLoadingHints] = useState(false);
-  const [descriptionHints, setDescriptionHints] = useState<string[]>([]);
+  // const [isLoadingHints, setIsLoadingHints] = useState(false); // Commented out for static export
+  // const [descriptionHints, setDescriptionHints] = useState<string[]>([]); // Commented out for static export
 
   const { control, handleSubmit, watch, setValue, formState: { errors, isSubmitting } } = useForm<BookFormValues>({
     resolver: zodResolver(bookFormSchema),
@@ -65,6 +65,9 @@ export function BookForm() {
   const currentTitle = watch('title');
   const currentCategory = watch('category');
 
+  /*
+  // AI Hint Generation - Commented out because it requires a server-side Genkit flow,
+  // which is not compatible with static export for GitHub Pages.
   const handleGenerateHints = async () => {
     if (!currentTitle || !currentCategory) {
       toast({
@@ -100,6 +103,7 @@ export function BookForm() {
     const currentDescription = watch('description');
     setValue('description', currentDescription ? `${currentDescription} ${hint}` : hint, { shouldValidate: true });
   };
+  */
 
   const onSubmit: SubmitHandler<BookFormValues> = async (data) => {
     // Simulate API call
@@ -107,7 +111,7 @@ export function BookForm() {
     console.log('Book data submitted:', data);
     toast({
       title: 'Book Listed Successfully!',
-      description: `${data.title} by ${data.author} is now up for sale.`,
+      description: `${data.title} by ${data.author} is now up for sale. (Demo - data not actually saved)`,
     });
     // TODO: Reset form or redirect user
   };
@@ -229,6 +233,8 @@ export function BookForm() {
           <div>
             <div className="flex justify-between items-center mb-1">
               <Label htmlFor="description">Description</Label>
+              {/* 
+              // AI Hint Generation Button - Commented out for static export
               <Button
                 type="button"
                 variant="outline"
@@ -243,6 +249,7 @@ export function BookForm() {
                 )}
                 Get AI Hints
               </Button>
+              */}
             </div>
             <Controller
               name="description"
@@ -252,7 +259,9 @@ export function BookForm() {
             {errors.description && <p className="text-sm text-destructive mt-1">{errors.description.message}</p>}
           </div>
 
-          {descriptionHints.length > 0 && (
+          {/* 
+          // AI Description Hints Display - Commented out for static export
+          descriptionHints.length > 0 && (
             <Alert>
               <Info className="h-4 w-4" />
               <AlertTitle className="font-semibold">AI Description Hints</AlertTitle>
@@ -272,7 +281,8 @@ export function BookForm() {
                 </div>
               </AlertDescription>
             </Alert>
-          )}
+          )
+          */}
 
         </CardContent>
         <CardFooter>

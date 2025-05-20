@@ -1,7 +1,10 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export', // Add this line for static exports
+  // If deploying to a subdirectory on GitHub Pages (e.g., https://<username>.github.io/<repository-name>/),
+  // you'll need to set the basePath:
+  // basePath: '/<repository-name>',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,6 +12,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Add this line to disable image optimization for static exports
     remotePatterns: [
       {
         protocol: 'https',
